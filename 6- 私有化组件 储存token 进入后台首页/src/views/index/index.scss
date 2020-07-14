@@ -1,0 +1,14 @@
+.layout-wrap{
+  height: 100vh;
+  .layout-header{
+    height: 75px;
+    background: #fff;
+    z-index: 2;
+    @include webkit(box-shadow,0 3px 16px 0 rgba(0,0,0,.1));
+  }
+  .layout-main{
+     border: 30px solid #f7f7f7;
+     background: #fff;
+     padding: 30px;
+  }
+}
