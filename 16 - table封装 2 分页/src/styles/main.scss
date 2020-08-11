@@ -1,0 +1,27 @@
+@import "./sassConfig.scss";
+@import "./reset.scss";
+
+body{
+  background-color: #001529!important;
+}
+
+.inline-button{
+  button+button{
+    margin-left: 10px;
+  };
+}
+
+.table-wrap{
+  margin-top: 30px;
+}
+
+.text-center{
+  text-align: center;
+}
+.color-red{
+  color: red;
+}
+
+.pull-right{
+  float: right;
+}
