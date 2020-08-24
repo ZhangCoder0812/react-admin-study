@@ -97,7 +97,7 @@ class DepartmentAdd extends Component{
             const data = res.data
             message.info(data.message)
             //重置表单 需要获取form对象  调用resetFields方法 使用ref来获取
-            this.refs.form.resetFields()
+            //this.refs.form.resetFields()
         })
         this.setState({
             loading:false
@@ -121,41 +121,9 @@ class DepartmentAdd extends Component{
     render(){
        
         return(
-           <Fragment>
             <FormCom formItem={this.state.formItem} formLayout={this.state.formLayout} 
-               onSubmit={this.onSubmit}
-            ></FormCom>
-            <Form
-                  /* 用来获取form对象 */
-                  ref="form"
-                  /* 点击确定触发 字段为表单的name值 */
-                  onFinish={this.onSubmit}
-                  /* 布局 */
-                  {...this.state.formLayout}
-                  /* 设置初始值 要在Form里面使用initialValues设置 不能在Form.Item里面使用defaultValue */
-                  initialValues={{number:0,status:true}}
-
-            >
-                <Form.Item label='部门名称' name='name'>
-                    <Input/>
-                </Form.Item>
-                <Form.Item label='人员数量' name='number'>
-                    <InputNumber min={0} max={100} />
-                </Form.Item>
-                <Form.Item label='禁启用' name='status'>
-                    <Radio.Group  >
-                        <Radio value={false}>禁用</Radio>
-                        <Radio value={true}>启用</Radio>
-                    </Radio.Group>
-                </Form.Item>
-                <Form.Item label='描述' name='content'>
-                    <Input.TextArea/>
-                </Form.Item>
-                <Form.Item >
-                    <Button loading={this.state.loading} type='primary' htmlType='submit'>确定</Button>
-                </Form.Item>
-            </Form>
-           </Fragment>
+            onSubmit={this.onSubmit}
+         ></FormCom>
         )
     }
 }
